@@ -1,3 +1,4 @@
+<?php
 /**
 Largest product in a grid
 Problem 11
@@ -28,3 +29,16 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 **/
+
+// Converting grid to two dimensional array
+$grid_array = array();
+$grid_rows_array =  explode("\r\n", $grid);
+for($grid_row=0; $grid_row < sizeof($grid_rows_array); $grid_row++){
+	
+	$row_elements =  explode(' ', $grid_rows_array[$grid_row]);
+	for($grid_col=0; $grid_col < sizeof($row_elements); $grid_col++){
+		$grid_array[$grid_row][$grid_col] = $row_elements[$grid_col];
+	}
+}
+// Converting grid to two dimensional array ends here
+?>
